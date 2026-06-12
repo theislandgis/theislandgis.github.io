@@ -1,0 +1,1014 @@
+﻿?
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Island GIS: Applied Geospatial Education for Cambodia</title>
+  <meta name="description"
+    content="The Island GIS provides affordable geospatial training for Cambodian learners. Learn Python, Google Earth Engine, remote sensing, and modern GIS skills.">
+  <meta property="og:title" content="The Island GIS">
+  <meta property="og:description" content="Applied Geospatial Education for Cambodia">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theislandgis.github.io">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-brand" onclick="showPage('home')">
+      <div class="nav-logo">🏝</div>
+      <span class="nav-name">The Island GIS</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-link active" data-page="home" data-i18n="nav.home" onclick="showPage('home')">Home</button>
+      <button class="nav-link" data-page="courses" data-i18n="nav.courses"
+        onclick="showPage('courses')">Courses</button>
+      <button class="nav-link" data-page="about" data-i18n="nav.about" onclick="showPage('about')">About</button>
+      <button class="nav-link" data-page="team" data-i18n="nav.team" onclick="showPage('team')">Team</button>
+    </div>
+    <button class="nav-cta" data-i18n="nav.language" onclick="toggleLanguage()"><img
+        src="https://flagcdn.com/w20/gb.png" style="width:18px; vertical-align:middle; margin-right:5px;" alt="GB">
+      Language</button>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu"><span></span></button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-link active" data-page="home" data-i18n="nav.home" onclick="showPage('home')">Home</button>
+    <button class="mobile-link" data-page="courses" data-i18n="nav.courses"
+      onclick="showPage('courses')">Courses</button>
+    <button class="mobile-link" data-page="about" data-i18n="nav.about" onclick="showPage('about')">About</button>
+    <button class="mobile-link" data-page="team" data-i18n="nav.team" onclick="showPage('team')">Team</button>
+    <div class="mobile-divider"></div>
+    <button class="mobile-link" data-i18n="nav.language" onclick="toggleLanguage()"><img
+        src="https://flagcdn.com/w20/gb.png" style="width:18px; vertical-align:middle; margin-right:5px;" alt="GB">
+      Language</button>
+  </div>
+
+  <div id="lang-menu"
+    style="display:none;position:fixed;top:62px;right:20px;background:white;border:1px solid #ddd;border-radius:8px;padding:10px;z-index:300;">
+    <a href="#" onclick="setLang('en')"
+      style="text-decoration:none;color:#1a4731;font-weight:600;display:block;padding:6px 12px;border-radius:6px;"><img
+        src="https://flagcdn.com/w20/gb.png" style="width:18px; vertical-align:middle; margin-right:5px;" alt="GB">
+      English</a>
+    <a href="#" onclick="setLang('kh')"
+      style="text-decoration:none;color:#1a4731;font-weight:600;display:block;padding:6px 12px;border-radius:6px;"><img
+        src="https://flagcdn.com/w20/kh.png" style="width:18px; vertical-align:middle; margin-right:5px;" alt="KH">
+      ខ្មែរ</a>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+  PAGE: HOME
+════════════════════════════════════════════ -->
+  <div class="page active" id="page-home">
+
+    <!-- Hero -->
+    <div class="home-hero">
+      <div class="topo">
+        <svg viewBox="0 0 1400 700" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="white" stroke-width="1">
+            <ellipse cx="700" cy="350" rx="650" ry="300" />
+            <ellipse cx="700" cy="350" rx="570" ry="254" />
+            <ellipse cx="700" cy="350" rx="490" ry="210" />
+            <ellipse cx="700" cy="350" rx="410" ry="170" />
+            <ellipse cx="700" cy="350" rx="330" ry="130" />
+            <ellipse cx="700" cy="350" rx="250" ry="94" />
+            <ellipse cx="700" cy="350" rx="170" ry="62" />
+            <ellipse cx="700" cy="350" rx="90" ry="34" />
+            <ellipse cx="150" cy="100" rx="200" ry="100" />
+            <ellipse cx="150" cy="100" rx="150" ry="72" />
+            <ellipse cx="150" cy="100" rx="100" ry="46" />
+            <ellipse cx="150" cy="100" rx="50" ry="24" />
+            <ellipse cx="1250" cy="580" rx="220" ry="110" />
+            <ellipse cx="1250" cy="580" rx="160" ry="78" />
+            <ellipse cx="1250" cy="580" rx="100" ry="48" />
+            <ellipse cx="1100" cy="80" rx="180" ry="90" />
+            <ellipse cx="1100" cy="80" rx="120" ry="58" />
+          </g>
+        </svg>
+      </div>
+      <div class="home-hero-inner">
+        <div>
+          <div class="hero-eyebrow" data-i18n="hero.eyebrow">🇰🇭 Geospatial Education · Cambodia</div>
+          <h1 class="hero-title" data-i18n="hero.title">From Traditional GIS<br>to <em>Modern</em> Geospatial</h1>
+          <p class="hero-desc" data-i18n="hero.desc">The Island GIS is an educational initiative designed to support Cambodian learners in growing their geospatial skills. We offer accessible guidance in Python, Google Earth Engine, and modern spatial analysis to help you build a solid technical foundation.</p>
+          <div class="hero-btns">
+            <button class="btn btn-green" data-i18n="hero.btn.courses" onclick="showPage('courses')">Browse Courses
+              →</button>
+            <button class="btn btn-outline-white" data-i18n="hero.btn.mission" onclick="showPage('about')">Our
+              Mission</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-title" data-i18n="hero.card.title">Our Learning Approach</div>
+          <div class="hero-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">🗺</div>
+              <div class="pillar-text"><strong data-i18n="hero.p1.title">Modern GIS Skills</strong><span
+                  data-i18n="hero.p1.text">Python, Google Earth Engine, and cloud analysis, building the practical skills needed for modern research and industry projects.</span></div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🧠</div>
+              <div class="pillar-text"><strong data-i18n="hero.p2.title">How to Learn</strong><span
+                  data-i18n="hero.p2.text">Focusing on spatial logic and independent problem-solving (debugging) so you can continue learning and growing on your own.</span></div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🔬</div>
+              <div class="pillar-text"><strong data-i18n="hero.p3.title">How to Research</strong><span
+                  data-i18n="hero.p3.text">Learn to formulate spatial questions, select appropriate methods, and create quality map products or reports.</span></div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🤖</div>
+              <div class="pillar-text"><strong data-i18n="hero.p4.title">AI as a Tool</strong><span
+                  data-i18n="hero.p4.text">Use AI tools constructively to support and speed up your workflow, while ensuring you understand the underlying concepts.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="mission-section">
+      <div class="mission-inner">
+        <div>
+          <div class="s-label" data-i18n="mission.label">Our Mission</div>
+          <div class="mission-quote" data-i18n="mission.quote">"Making professional geospatial skills accessible to
+            every Cambodian learner, at
+            an affordable price."</div>
+          <p class="mission-text" data-i18n="mission.text1">Geospatial analysis tools are changing rapidly, moving from local desktop software to cloud platforms and programming. The Island GIS was started to help close this gap for Cambodian students and professionals by providing affordable, structured guidance on modern, open-source tools like Python and Google Earth Engine.</p>
+          <p class="mission-text" data-i18n="mission.text2">We believe that talent is everywhere, but access to resources, clear explanations in Khmer, and a supportive learning environment are often hard to find. We are here to help you bridge that gap at your own pace.</p>
+          <button class="btn btn-outline-green" data-i18n="mission.btn" onclick="showPage('about')"
+            style="margin-top:8px">Read our full story
+            →</button>
+        </div>
+        <div>
+          <div class="s-label" data-i18n="commit.label">Three Commitments</div>
+          <div class="s-title" data-i18n="commit.title" style="font-size:28px;margin-bottom:24px">How we support your learning journey</div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div
+              style="background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;border-left:4px solid var(--g4)">
+              <div data-i18n="commit.1.title" style="font-weight:700;font-size:14px;color:var(--g1);margin-bottom:5px">
+                Affordable · Always</div>
+              <div data-i18n="commit.1.text" style="font-size:13.5px;color:var(--ink-m);line-height:1.6">We price our courses specifically for Cambodian students and professionals, offering options like early bird rates to ensure financial constraints don't limit your potential.</div>
+            </div>
+            <div
+              style="background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;border-left:4px solid var(--g4)">
+              <div data-i18n="commit.2.title" style="font-weight:700;font-size:14px;color:var(--g1);margin-bottom:5px">
+                Taught in Khmer</div>
+              <div data-i18n="commit.2.text" style="font-size:13.5px;color:var(--ink-m);line-height:1.6">We host live sessions in Khmer so you can learn complex spatial concepts in your native language, while using standard English technical terms to prepare you for the field.</div>
+            </div>
+            <div
+              style="background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;border-left:4px solid var(--g4)">
+              <div data-i18n="commit.3.title" style="font-weight:700;font-size:14px;color:var(--g1);margin-bottom:5px">
+                Portfolio-First Focus</div>
+              <div data-i18n="commit.3.text" style="font-size:13.5px;color:var(--ink-m);line-height:1.6">Beyond certificates, we believe real-world projects speak louder. You will build a GitHub portfolio and a live web app that showcase your coding and analysis skills to potential employers or researchers.</div>
+            </div>
+            <div
+              style="background:white;border:1px solid var(--border);border-radius:12px;padding:20px 22px;border-left:4px solid var(--g4)">
+              <div data-i18n="commit.4.title" style="font-weight:700;font-size:14px;color:var(--g1);margin-bottom:5px">
+                💬 Community After Class
+              </div>
+              <div data-i18n="commit.4.text" style="font-size:13.5px;color:var(--ink-m);line-height:1.6">The course ends, but the learning doesn't. We stay connected through Telegram groups to share projects, discuss problems, and grow together as a community.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Current course teaser -->
+    <div class="section" style="background:var(--ivory)">
+      <div class="section-inner">
+        <div class="s-label" data-i18n="teaser.label">Courses</div>
+        <div
+          style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px">
+          <div class="s-title" style="margin-bottom:0">Now Open: Registration Live</div>
+          <button class="btn btn-outline-green" data-i18n="teaser.btn" onclick="showPage('courses')">All Courses
+            →</button>
+        </div>
+        <!-- Mini course card -->
+        <div
+          style="background:white;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);max-width:520px">
+          <div style="height:6px;background:linear-gradient(90deg,var(--g2),var(--g4))"></div>
+          <div style="padding:26px">
+            <div class="course-status"
+              style="background:#e6f4ec;color:#1a5c35;border:1px solid #a8d5b5;display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px" data-i18n="py.status">
+              🟢 Registration Open</div>
+            <div class="course-card-title" data-i18n="py.title">Python for GIS</div>
+            <div class="course-card-subtitle" data-i18n="py.subtitle">Foundations, Data Handling &amp; Geospatial Analysis</div>
+            <div class="course-tags">
+              <span class="course-tag">Python</span><span class="course-tag">GeoPandas</span>
+              <span class="course-tag">Pandas</span><span class="course-tag">Rasterio</span>
+            </div>
+            <div class="course-meta-row" style="margin-bottom:16px">
+              <div class="course-meta-item">
+                <div class="course-meta-label" data-i18n="py.meta.start">Start Date</div>
+                <div class="course-meta-value" data-i18n="py.meta.start_val">June 6, 2026</div>
+              </div>
+              <div class="course-meta-item">
+                <div class="course-meta-label" data-i18n="py.meta.sched">Schedule</div>
+                <div class="course-meta-value" data-i18n="py.meta.sched_val">Sat + Sun · 4 hrs/week</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+              <span class="price-early" data-i18n="py.price.early">$80</span>
+              <span class="price-badge" data-i18n="py.price.badge">Early Bird · First 10</span>
+              <span class="price-full" data-i18n="py.price.after">· $96 after</span>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn-green btn-sm" onclick="openPanel('pygis-panel')" data-i18n="py.btn.register">Register Now →</button>
+              <button class="btn btn-ghost btn-sm" onclick="showPage('courses')" data-i18n="py.btn.details">Course Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-banner">
+      <div class="cta-title" data-i18n="cta.home.title">Python for GIS: Registration is now open</div>
+      <div class="cta-sub" data-i18n="cta.home.sub">Cohort 1 starts June 6, 2026. Live sessions in Khmer. Max 30 students (first come, first served).</div>
+      <div class="cta-btns">
+        <button class="btn btn-outline-white" onclick="showPage('about')" data-i18n="cta.btn.story">Our Story</button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ════════════════════════════════════════════
+  PAGE: COURSES
+════════════════════════════════════════════ -->
+  <div class="page" id="page-courses">
+
+    <div class="courses-hero">
+      <div class="topo">
+        <svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="white" stroke-width="1" opacity=".1">
+            <ellipse cx="900" cy="150" rx="380" ry="160" />
+            <ellipse cx="900" cy="150" rx="300" ry="118" />
+            <ellipse cx="900" cy="150" rx="220" ry="80" />
+            <ellipse cx="200" cy="80" rx="220" ry="100" />
+            <ellipse cx="200" cy="80" rx="160" ry="68" />
+          </g>
+        </svg>
+      </div>
+      <div class="courses-hero-inner">
+        <div class="s-label" data-i18n="courses.label" style="color:var(--g5)">Course Catalogue</div>
+        <h1 data-i18n="courses.h1">All Courses</h1>
+        <p data-i18n="courses.desc">Applied geospatial training for Cambodian learners. We start with remote sensing and
+          Python, with more courses
+          coming as the community grows.</p>
+      </div>
+    </div>
+
+    <div class="catalogue">
+      <div class="catalogue-inner">
+        <div class="catalogue-filters">
+          <div class="filter-chip active" data-i18n="filter.all">All</div>
+          <div class="filter-chip" data-i18n="filter.rs">Remote Sensing</div>
+          <div class="filter-chip" data-i18n="filter.python">Python & GEE</div>
+          <div class="filter-chip" data-i18n="filter.ml">Machine Learning</div>
+          <div class="filter-chip" data-i18n="filter.soon">Open Soon</div>
+        </div>
+
+        <div class="courses-grid">
+
+          <!-- Course 0: Python for GIS: NOW OPEN -->
+          <div class="course-card">
+            <div class="course-card-banner" style="background:linear-gradient(135deg,#1a4731,#2e7d52)"></div>
+            <div class="course-card-body">
+              <div class="course-status"
+                style="background:#e6f4ec;color:#1a5c35;border:1px solid #a8d5b5;display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px" data-i18n="py.status">
+                🟢 Registration Open</div>
+              <div class="course-card-title" data-i18n="py.title">Python for GIS</div>
+              <div class="course-card-subtitle" data-i18n="py.subtitle">Foundations, Data Handling &amp; Geospatial Analysis</div>
+              <div class="course-card-desc" data-i18n="py.desc">Expand your desktop GIS toolkit with Python. You will learn to automate repetitive GIS tasks, work with vector and raster datasets using GeoPandas and Rasterio, and build a capstone project to share your work on GitHub.</div>
+              <div class="course-tags">
+                <span class="course-tag">Python</span><span class="course-tag">Pandas</span>
+                <span class="course-tag">GeoPandas</span><span class="course-tag">Rasterio</span>
+                <span class="course-tag">Matplotlib</span><span class="course-tag">GitHub</span>
+              </div>
+              <div class="course-meta-row">
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="py.meta.start">Start Date</div>
+                  <div class="course-meta-value" data-i18n="py.meta.start_val">June 6, 2026</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="py.meta.sched">Schedule</div>
+                  <div class="course-meta-value" data-i18n="py.meta.sched_val">Sat + Sun · 4 hrs/wk</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="py.meta.dur">Duration</div>
+                  <div class="course-meta-value" data-i18n="py.meta.dur_val">12 Weeks</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="py.meta.hrs">Total Hours</div>
+                  <div class="course-meta-value" data-i18n="py.meta.hrs_val">48 hrs live</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="py.meta.fmt">Format</div>
+                  <div class="course-meta-value" data-i18n="py.meta.fmt_val">Sat + Sun / Google Meet</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="py.meta.size">Cohort Size</div>
+                  <div class="course-meta-value" data-i18n="py.meta.size_val">Max 30 students</div>
+                </div>
+              </div>
+              <div class="course-price-row">
+                <span class="price-early" data-i18n="py.price.early">$80</span>
+                <span class="price-badge" data-i18n="py.price.badge">Early Bird · First 10</span>
+                <span class="price-full" data-i18n="py.price.after">· $96 after</span>
+              </div>
+              <div class="course-card-actions">
+                <button class="btn btn-green btn-sm" onclick="openDetail('pygis-detail')" data-i18n="py.btn.details">Course Details</button>
+                <button class="btn btn-ghost btn-sm" onclick="openPanel('pygis-panel')" data-i18n="py.btn.register">Register Now →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 1: Remote Sensing -->
+          <div class="course-card">
+            <div class="course-card-banner"></div>
+            <div class="course-card-body">
+              <div class="course-status status-coming" data-i18n="cc.status">Opening Soon</div>
+              <div class="course-card-title" data-i18n="cc.title">Remote Sensing Analysis with Python & Google Earth
+                Engine</div>
+              <div class="course-card-subtitle" data-i18n="cc.subtitle">A Live Applied Geospatial Cohort for Cambodia
+              </div>
+              <div class="course-card-desc" data-i18n="cc.desc">Learn to process satellite imagery and analyze environmental changes using Python and the Google Earth Engine API. We cover land cover classification, thermal analysis, change detection, and time-series analysis in the cloud.</div>
+              <div class="course-tags">
+                <span class="course-tag">Python</span><span class="course-tag">Google Earth Engine</span>
+                <span class="course-tag">LULC</span><span class="course-tag">UHI</span>
+                <span class="course-tag">Change Detection</span><span class="course-tag">Time Series</span>
+              </div>
+              <div class="course-meta-row">
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="cc.meta.start">Start Date</div>
+                  <div class="course-meta-value" data-i18n="cc.meta.start_val">Coming Soon</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="cc.meta.sched">Schedule</div>
+                  <div class="course-meta-value" data-i18n="cc.meta.sched_val">Sat–Sun · 9–11 AM</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="cc.meta.dur">Duration</div>
+                  <div class="course-meta-value" data-i18n="cc.meta.dur_val">15 Weeks</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="cc.meta.hrs">Total Hours</div>
+                  <div class="course-meta-value" data-i18n="cc.meta.hrs_val">60 hrs live</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="cc.meta.fmt">Format</div>
+                  <div class="course-meta-value" data-i18n="cc.meta.fmt_val">Sat + Sun / Google Meet</div>
+                </div>
+                <div class="course-meta-item">
+                  <div class="course-meta-label" data-i18n="cc.meta.size">Cohort Size</div>
+                  <div class="course-meta-value" data-i18n="cc.meta.size_val">Max 30 students</div>
+                </div>
+              </div>
+              <div class="course-price-row">
+                <span class="price-early">$100</span>
+                <span class="price-badge" data-i18n="cc.price.badge">Early Bird · First 10</span>
+                <span class="price-full" data-i18n="cc.price.after">· $120 after</span>
+              </div>
+              <div class="course-card-actions">
+                <button class="btn btn-ghost btn-sm" data-i18n="cc.btn.details" onclick="openDetail('rs-detail')">Course
+                  Details</button>
+                <button class="btn btn-ghost btn-sm" data-i18n="cc.btn.instructor"
+                  onclick="openDetail('rs-instructor')">Instructor</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ════════════════════════════════════════════
+  PAGE: ABOUT
+════════════════════════════════════════════ -->
+  <div class="page" id="page-about">
+
+    <!-- Hero -->
+    <div class="about-hero">
+      <div class="topo">
+        <svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="white" stroke-width="1" opacity=".08">
+            <ellipse cx="300" cy="200" rx="380" ry="180" />
+            <ellipse cx="300" cy="200" rx="300" ry="138" />
+            <ellipse cx="300" cy="200" rx="220" ry="98" />
+            <ellipse cx="300" cy="200" rx="140" ry="60" />
+            <ellipse cx="1000" cy="150" rx="280" ry="140" />
+            <ellipse cx="1000" cy="150" rx="210" ry="100" />
+            <ellipse cx="1000" cy="150" rx="140" ry="64" />
+          </g>
+        </svg>
+      </div>
+      <div class="about-hero-inner">
+        <div class="s-label" data-i18n="about.label" style="color:var(--g5)">About The Island GIS</div>
+        <h1 class="about-hero-title" data-i18n="about.h1">Built for <em>Cambodian</em><br>GIS Learners</h1>
+        <p class="about-hero-body" data-i18n="about.hero.body">The Island GIS was created to support Cambodian learners in bridging the gap to modern geospatial workflows. We believe that with localized guidance, accessible tools, and a structured learning environment, anyone can build a strong foundation in spatial data science.</p>
+      </div>
+    </div>
+
+    <!-- Story -->
+    <div class="story-section">
+      <div class="story-inner">
+        <div>
+          <div class="s-label" data-i18n="story.label">The Story</div>
+          <div class="story-pullquote" data-i18n="story.quote">"We wanted to build a space where modern geospatial skills are explained in Khmer, taught step-by-step, and accessible to everyone."</div>
+          <p class="story-text" data-i18n="story.text1">While working in Cambodia's humanitarian and development sectors, we noticed that many GIS professionals and students wanted to learn modern tools like Python and Google Earth Engine but struggled to find structured, localized resources. Most available training was either very expensive or only in English, creating an unnecessary barrier for eager learners.</p>
+          <p class="story-text" data-i18n="story.text2">The Island GIS was built to help fill this gap by providing structured, live instruction in Khmer, focusing on practical research methods, and offering pricing adapted to local realities. Our priority is helping you develop long-term problem-solving skills so you can continue growing independently after the course ends.</p>
+          <div class="story-highlight">
+            <div class="story-highlight-title" data-i18n="story.island.title">Why "The Island"?</div>
+            <div class="story-highlight-text" data-i18n="story.island.text">An island is a place you can orient yourself
+              from. It sits in the middle
+              of something vast (like the ocean of geospatial knowledge) and gives you a foundation to explore
+              outward. The Island GIS is meant to be that foundation: a place you start from, not where you stay.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Philosophy -->
+    <div class="philosophy-section">
+      <div style="max-width:1080px;margin:0 auto">
+        <div class="s-label" style="color:var(--g5)" data-i18n="phil.label">Our Philosophy</div>
+        <div class="s-title" style="color:white;margin-top:8px" data-i18n="phil.h1">Four principles that<br>guide our work</div>
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philo-num">01</div>
+            <div class="philo-title" data-i18n="phil.1.title">Accessible Learning</div>
+            <div class="philo-text" data-i18n="phil.1.text">We want to make sure financial constraints don't keep motivated students from learning. Our pricing is designed to fit local realities.</div>
+          </div>
+          <div class="philosophy-card">
+            <div class="philo-num">02</div>
+            <div class="philo-title" data-i18n="phil.2.title">Khmer-Centered Instruction</div>
+            <div class="philo-text" data-i18n="phil.2.text">We explain complex spatial concepts in Khmer to support clearer understanding, while using standard English for code and materials to prepare you for the field.</div>
+          </div>
+          <div class="philosophy-card">
+            <div class="philo-num">03</div>
+            <div class="philo-title" data-i18n="phil.3.title">Depth Over Speed</div>
+            <div class="philo-text" data-i18n="phil.3.text">Learning to code and analyze takes time. We focus on teaching core concepts thoroughly so you build a solid foundation, rather than rushing through a checklist of tools.</div>
+          </div>
+          <div class="philosophy-card">
+            <div class="philo-num">04</div>
+            <div class="philo-title" data-i18n="phil.4.title">Supporting Your Independence</div>
+            <div class="philo-text" data-i18n="phil.4.text">Our ultimate goal is for you to feel confident enough to explore new tools on your own, solve real-world problems in your work, and share your knowledge with others.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who it's for -->
+    <div class="audience-section">
+      <div class="section-inner">
+        <div class="s-label" data-i18n="aud.label">Who This Is For</div>
+        <div class="s-title" data-i18n="aud.h1">If any of these sound like you,<br>you belong here</div>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <div class="audience-icon">🎓</div>
+            <div class="audience-title" data-i18n="aud.1.title">GIS Students</div>
+            <div class="audience-text" data-i18n="aud.1.text">You have learned QGIS or ArcGIS at university and want to
+              know how professionals
+              actually work, using Python, automation, and cloud platforms.</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon">🌿</div>
+            <div class="audience-title" data-i18n="aud.2.title">Environment & Land Professionals</div>
+            <div class="audience-text" data-i18n="aud.2.text">You work in forestry, agriculture, urban planning, or
+              conservation and want to
+              use satellite data to do your job better and faster.</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon">🏛</div>
+            <div class="audience-title" data-i18n="aud.3.title">Government & NGO Staff</div>
+            <div class="audience-text" data-i18n="aud.3.text">You produce spatial reports and maps for decision-makers
+              and want to move from
+              manual GIS workflows to automated, reproducible analysis.</div>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon">🔭</div>
+            <div class="audience-title" data-i18n="aud.4.title">Aspiring Researchers</div>
+            <div class="audience-text" data-i18n="aud.4.text">You want to publish your own research on Cambodian land,
+              climate, or urban
+              environments, needing the geospatial methods to do it credibly.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="cta-banner">
+      <div class="cta-title" data-i18n="cta.about.title">Start your journey with us</div>
+      <div class="cta-sub" data-i18n="cta.about.sub">The first cohort is open now. Early bird price: $100 (for the first 10
+        registrations).</div>
+      <div class="cta-btns">
+        <button class="btn btn-outline-white" onclick="showPage('courses')" data-i18n="cta.btn.browse">Browse
+          Courses</button>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ════════════════════════════════════════════
+  PAGE: TEAM
+════════════════════════════════════════════ -->
+  <div class="page" id="page-team">
+
+    <div class="team-hero">
+      <div class="topo">
+        <svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="white" stroke-width="1" opacity=".1">
+            <ellipse cx="600" cy="150" rx="500" ry="140" />
+            <ellipse cx="600" cy="150" rx="400" ry="108" />
+            <ellipse cx="600" cy="150" rx="300" ry="78" />
+            <ellipse cx="600" cy="150" rx="200" ry="50" />
+            <ellipse cx="100" cy="60" rx="160" ry="80" />
+            <ellipse cx="100" cy="60" rx="100" ry="48" />
+          </g>
+        </svg>
+      </div>
+      <div class="team-hero-inner">
+        <div class="s-label" data-i18n="team.label" style="color:var(--g5)">Our People</div>
+        <h1 data-i18n="team.h1">Meet the Team</h1>
+        <p data-i18n="team.desc">The people behind The Island GIS, a small team with a shared mission to make modern
+          geospatial education
+          accessible in Cambodia.</p>
+      </div>
+    </div>
+
+    <div class="team-section">
+      <div class="team-section-inner">
+        <div class="s-label" data-i18n="team.core.label">Core Team</div>
+        <div class="s-title" data-i18n="team.core.title">The people who build and teach</div>
+        <div class="team-grid">
+
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="khimsopheak.jpg" alt="Sopheak Khim">
+            </div>
+            <div class="team-name">Sopheak Khim</div>
+            <div class="team-role" data-i18n="team.sopheak.role">Founder & Lead Instructor</div>
+            <div class="team-bio" data-i18n="team.sopheak.bio">LIMIS & Enterprise Systems Coordinator at APOPO. Geospatial Specialist with 4+ years of experience in humanitarian demining, government GIS, and remote sensing. Experienced in deploying ArcGIS Enterprise on Azure and automating spatial workflows.</div>
+            <a href="https://www.linkedin.com/in/sopheak-khim/" target="_blank"
+              style="margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--g4); text-decoration: none;">
+              💼 View on LinkedIn
+            </a>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="sambo.jpg" alt="Khimkhen Rathanaksambo">
+            </div>
+            <div class="team-name">Khimkhen Rathanaksambo</div>
+            <div class="team-role">Teaching Assistant</div>
+            <div class="team-bio">Software Engineering Student at the Kirirom Institute of Technology (KIT).
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">
+              <img src="hulrong.jpg" alt="Hul Rong">
+            </div>
+            <div class="team-name">Hul Rong</div>
+            <div class="team-role">Standby Instructor</div>
+            <div class="team-bio">Former GIS Specialist at Urban Dynamic. Currently Teacher at Chikmol Primary School.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="cta-banner">
+      <div class="cta-title" data-i18n="cta.team.title">Want to be part of the journey?</div>
+      <div class="cta-sub" data-i18n="cta.team.sub">Join the first cohort and learn from a team that is building geospatial education for Cambodia.</div>
+      <div class="cta-btns">
+        <button class="btn btn-outline-white" onclick="showPage('courses')" data-i18n="cta.btn.browse">Browse Courses</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">🏝 The Island GIS</div>
+        <div class="footer-brand-tag">Applied Geospatial Education for Cambodia</div>
+        <div class="footer-nav">
+          <button class="footer-nav-link" onclick="showPage('home')">Home</button>
+          <button class="footer-nav-link" onclick="showPage('courses')">Courses</button>
+          <button class="footer-nav-link" onclick="showPage('about')">About</button>
+          <button class="footer-nav-link" onclick="showPage('team')">Team</button>
+        </div>
+        <div class="footer-copy">© 2026 The Island GIS · Sopheak Khim · Phnom Penh, Cambodia</div>
+      </div>
+      <div class="footer-social">
+        <a class="social-link" href="https://www.facebook.com/share/18QuuVuXCN/" target="_blank">📘 Facebook</a>
+        <a class="social-link" href="https://www.linkedin.com/in/sopheak-khim/" target="_blank">💼 LinkedIn</a>
+        <a class="social-link" href="https://t.me/islandgis" target="_blank">💬 Telegram</a>
+        <a class="social-link" href="mailto:khimsopheak750@gmail.com">✉ Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════
+  COURSE DETAIL PANELS (overlay drawers)
+════════════════════════════════════════════ -->
+
+  <!-- RS Course Detail -->
+  <div class="course-detail-overlay" id="rs-detail" onclick="closeDetail(event,'rs-detail')">
+    <div class="course-detail-panel" onclick="event.stopPropagation()">
+      <div class="panel-header">
+        <button class="panel-close" onclick="closePanel('rs-detail')">✕</button>
+        <div class="course-badge"
+          style="display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#a8d5b5;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:12px;margin-bottom:12px"
+          data-i18n="cd.badge">
+          Course Details</div>
+        <div
+          style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:white;line-height:1.15;margin-bottom:6px"
+          data-i18n="cd.title">
+          Remote Sensing Analysis with Python & GEE</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6);font-style:italic" data-i18n="cd.subtitle">A Live Applied
+          Geospatial Cohort for
+          Cambodia · 15 Weeks · 60 Hours</div>
+      </div>
+      <div class="panel-body">
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="cd.outcomes.title">Learning Outcomes</div>
+          <ul class="outcome-list">
+            <li data-i18n="cd.o1">Process raster and vector geospatial data using Python and JupyterLab</li>
+            <li data-i18n="cd.o2">Access and analyse satellite imagery using the Google Earth Engine Python API</li>
+            <li data-i18n="cd.o3">Calculate and interpret spectral indices (NDVI, NDWI, and NDBI)</li>
+            <li data-i18n="cd.o4">Perform land use/land cover classification using SVM and Random Forest</li>
+            <li data-i18n="cd.o5">Conduct Urban Heat Island analysis and land cover change detection</li>
+            <li data-i18n="cd.o6">Analyse 10-year satellite time series and export results</li>
+            <li data-i18n="cd.o7">Produce publication-quality maps and interactive GEE web apps</li>
+            <li data-i18n="cd.o8">Publish a reproducible geospatial project on GitHub</li>
+          </ul>
+        </div>
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="cd.tools.title">Tools you will use</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">Google
+              Earth Engine</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">Python</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">QGIS</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">Antigravity</span>
+          </div>
+        </div>
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="cd.sched.title">15-Week Schedule</div>
+          <div class="week-list">
+            <div class="week-item"><span class="wk-num">01</span><span data-i18n="cd.w1">Course Setup & Python
+                Foundations for GIS Users</span></div>
+            <div class="week-item"><span class="wk-num">02</span><span data-i18n="cd.w2">GEE JavaScript Code Editor &
+                Python API</span></div>
+            <div class="week-item"><span class="wk-num">03</span><span data-i18n="cd.w3">GEE Python API Deep Dive &
+                Antigravity Introduction</span></div>
+            <div class="week-item"><span class="wk-num">04</span><span data-i18n="cd.w4">Spectral Indices: NDVI, NDWI
+                &
+                NDBI</span></div>
+            <div class="week-item"><span class="wk-num">05</span><span data-i18n="cd.w5">LULC Classification (
+                SVM)</span></div>
+            <div class="week-item"><span class="wk-num">06</span><span data-i18n="cd.w6">LULC Classification (
+                Random Forest & Comparison)</span></div>
+            <div class="week-item"><span class="wk-num">07</span><span data-i18n="cd.w7">Urban Heat Island
+                Analysis</span></div>
+            <div class="week-item"><span class="wk-num">08</span><span data-i18n="cd.w8">Change Detection</span></div>
+            <div class="week-item"><span class="wk-num">09</span><span data-i18n="cd.w9">Time Series Analysis</span>
+            </div>
+            <div class="week-item"><span class="wk-num">10</span><span data-i18n="cd.w10">Visualisation & Reporting (
+                Part 1)</span></div>
+            <div class="week-item"><span class="wk-num">11</span><span data-i18n="cd.w11">Visualisation & Reporting (
+                Part 2)</span></div>
+            <div class="week-item"><span class="wk-num">12</span><span data-i18n="cd.w12">Capstone (
+                Guidance, Lab & Bug Fix)</span></div>
+                Fix</span></div>
+            <div class="week-item"><span class="wk-num">13</span><span data-i18n="cd.w13">Capstone Presentations</span>
+            </div>
+            <div class="week-item bonus"><span class="wk-num" style="color:var(--g3)">14</span><span
+                data-i18n="cd.w14">Personal Project Discussion & Mentorship</span></div>
+            <div class="week-item bonus"><span class="wk-num" style="color:var(--g3)">15</span><span
+                data-i18n="cd.w15">GitHub Portfolio Preparation & Course Wrap-up</span></div>
+          </div>
+        </div>
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="cd.after.title">After the Course</div>
+          <div
+            style="display:flex;align-items:flex-start;gap:14px;background:var(--g-pale);border:1px solid var(--border);border-radius:12px;padding:20px">
+            <div style="font-size:28px;flex-shrink:0">💬</div>
+            <div>
+              <div style="font-weight:700;font-size:14px;color:var(--g1);margin-bottom:4px" data-i18n="cd.after.sub">
+                Ongoing Support via Telegram
+              </div>
+              <div style="font-size:13.5px;color:var(--ink-m);line-height:1.6" data-i18n="cd.after.desc">When the course
+                ends, you stay in the
+                community. Every cohort has a dedicated Telegram group where you can continue asking questions, share
+                your projects, get feedback, and receive guidance from your instructor and fellow learners (for as
+                long
+                as you need.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button class="btn btn-green" onclick="closePanel('rs-detail');openPanel('rs-panel')"
+          data-i18n="cd.btn.reg">Register Now, $100 Early
+          Bird</button>
+        <button class="btn btn-outline-green"
+          onclick="window.open('https://docs.google.com/document/d/1KjYzbsztW9LcXhZtk-U7ntzO9S-PyTxL/edit?usp=sharing&ouid=106652079761232169524&rtpof=true&sd=true', '_blank')"
+          data-i18n="cd.btn.syl">Detailed
+          Syllabus</button>
+        <button class="btn btn-ghost" onclick="openDetail('rs-instructor')" data-i18n="cd.btn.inst">View Instructor
+          →</button>
+        <button class="btn btn-ghost" onclick="closePanel('rs-detail')" data-i18n="cd.btn.close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RS Instructor Panel -->
+  <div class="course-detail-overlay" id="rs-instructor" onclick="closeDetail(event,'rs-instructor')">
+    <div class="course-detail-panel" onclick="event.stopPropagation()">
+      <div class="panel-header">
+        <button class="panel-close" onclick="closePanel('rs-instructor')">✕</button>
+        <div class="course-badge"
+          style="display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#a8d5b5;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:12px;margin-bottom:12px"
+          data-i18n="ci.badge">
+          Instructor</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:white">Sopheak Khim
+        </div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:4px" data-i18n="ci.role">LIMIS & Enterprise Systems Coordinator (APOPO) · Siem Reap</div>
+      </div>
+      <div class="panel-body">
+        <div class="panel-instructor">
+          <div class="inst-avatar"><img src="khimsopheak.jpg" alt="Sopheak Khim"
+              style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block"></div>
+          <div>
+            <div class="inst-name">Sopheak Khim</div>
+            <div class="inst-role" data-i18n="ci.role2">LIMIS & Enterprise Systems Coordinator (APOPO) · Founder, The Island GIS</div>
+            <div class="inst-tags">
+              <span class="inst-tag">Remote Sensing</span><span class="inst-tag">Python</span>
+              <span class="inst-tag">Google Earth Engine</span><span class="inst-tag">Urban Heat Island</span>
+              <span class="inst-tag">Machine Learning</span><span class="inst-tag">LULC</span>
+            </div>
+            <a href="https://www.linkedin.com/in/sopheak-khim/" target="_blank"
+              style="margin-top: 14px; display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--g4); text-decoration: none;">
+              💼 View on LinkedIn
+            </a>
+          </div>
+        </div>
+        <div class="panel-section" style="margin-top:24px">
+          <div class="panel-section-title" data-i18n="ci.bg.title">Background</div>
+          <p style="font-size:14px;color:var(--ink-m);line-height:1.7;margin-bottom:14px" data-i18n="ci.bg.p1">Geospatial Data Specialist with 4+ years of experience leading GIS operations across humanitarian, government, and academic research settings. Currently deploying and coordinating a hybrid ArcGIS Enterprise/Online environment on Microsoft Azure for APOPO's mine action operations in Cambodia. Experienced in automating spatial workflows, data QA, and cloud migrations.</p>
+          <p style="font-size:14px;color:var(--ink-m);line-height:1.7" data-i18n="ci.bg.p2">Holds a BSc in Land Management (focused on GIS & Remote Sensing) from the Royal University of Agriculture. A published researcher (KHEOBS Day 2024, FOSS4G-Asia 2024), his work on Urban Heat Island (UHI) intensity and web mapping applications forms the technical foundation of the training at The Island GIS.</p>
+        </div>
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="ci.pub.title">Published Research</div>
+          <div
+            style="background:var(--g-pale);border-left:4px solid var(--g4);border-radius:8px;padding:16px;margin-bottom:12px">
+            <div style="font-weight:700;font-size:13.5px;color:var(--g1);margin-bottom:4px" data-i18n="ci.pub.1.title">Effects of Land Use/Land Cover Changes on Surface Urban Heat Island Intensity in Phnom Penh</div>
+            <div style="font-size:12.5px;color:var(--ink-l)" data-i18n="ci.pub.1.desc">KHEOBS Day 2024 · LST retrieval · NDVI correlation · Emissivity correction</div>
+          </div>
+          <div
+            style="background:var(--g-pale);border-left:4px solid var(--g4);border-radius:8px;padding:16px;margin-bottom:12px">
+            <div style="font-weight:700;font-size:13.5px;color:var(--g1);margin-bottom:4px" data-i18n="ci.pub.2.title">Detection of Urban Green Spaces in Phnom Penh in 1993 Using Historical Aerial Pictures</div>
+            <div style="font-size:12.5px;color:var(--ink-l)" data-i18n="ci.pub.2.desc">KHEOBS Day 2024 · Historical aerial photos · Remote sensing analysis</div>
+          </div>
+          <div style="background:var(--g-pale);border-left:4px solid var(--g4);border-radius:8px;padding:16px">
+            <div style="font-weight:700;font-size:13.5px;color:var(--g1);margin-bottom:4px" data-i18n="ci.pub.3.title">GeoCambodia: A Web Application to Visualize Cambodia Through Aerial Photographs</div>
+            <div style="font-size:12.5px;color:var(--ink-l)" data-i18n="ci.pub.3.desc">FOSS4G-Asia 2024 (Bangkok) · Web mapping application · Aerial orthophotos</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button class="btn btn-green" onclick="closePanel('rs-instructor');openPanel('rs-panel')"
+          data-i18n="ci.btn.reg">Register for This
+          Course</button>
+        <button class="btn btn-ghost" onclick="closePanel('rs-instructor')" data-i18n="ci.btn.close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Python for GIS Detail Panel -->
+  <div class="course-detail-overlay" id="pygis-detail" onclick="closeDetail(event,'pygis-detail')">
+    <div class="course-detail-panel" onclick="event.stopPropagation()">
+      <div class="panel-header">
+        <button class="panel-close" onclick="closePanel('pygis-detail')">✕</button>
+        <div class="course-badge"
+          style="display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#a8d5b5;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:12px;margin-bottom:12px" data-i18n="pyd.badge">
+          Course Details</div>
+        <div
+          style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:white;line-height:1.15;margin-bottom:6px" data-i18n="pyd.title">
+          Python for GIS</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6);font-style:italic" data-i18n="pyd.subtitle">Foundations, Data Handling &amp;
+          Geospatial Analysis · 12 Weeks · 48 Hours Live</div>
+      </div>
+      <div class="panel-body">
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="pyd.outcomes.title">What You Will Learn</div>
+          <ul class="outcome-list">
+            <li data-i18n="pyd.o1">Write Python scripts to automate repetitive GIS tasks that would take hours in desktop software</li>
+            <li data-i18n="pyd.o2">Use JupyterLab as a professional coding environment for geospatial analysis</li>
+            <li data-i18n="pyd.o3">Clean, filter, merge, and analyse tabular datasets using Pandas</li>
+            <li data-i18n="pyd.o4">Read and manipulate vector geospatial data using GeoPandas and Shapely</li>
+            <li data-i18n="pyd.o5">Perform spatial operations (CRS transformations, spatial joins, buffers, and overlay analysis)</li>
+            <li data-i18n="pyd.o6">Process raster data with Rasterio (read bands, calculate indices, clip, and reproject)</li>
+            <li data-i18n="pyd.o7">Create publication-quality maps and charts using Matplotlib</li>
+            <li data-i18n="pyd.o8">Use AI coding assistants to accelerate development, after understanding the fundamentals</li>
+            <li data-i18n="pyd.o9">Publish a reproducible geospatial analysis project on GitHub</li>
+          </ul>
+        </div>
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="pyd.tools.title">Tools You Will Use</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">Python</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">JupyterLab</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">Pandas</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">GeoPandas</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">Rasterio</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">Matplotlib</span>
+            <span
+              style="font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;background:var(--g-pale);color:var(--g3);border:1px solid var(--border)">GitHub</span>
+          </div>
+        </div>
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="pyd.sched.title">12-Week Schedule</div>
+          <div class="week-list">
+            <div class="week-item"><span class="wk-num">01</span><span data-i18n="pyd.w1">Python Setup &amp; Basics</span></div>
+            <div class="week-item"><span class="wk-num">02</span><span data-i18n="pyd.w2">Data Structures &amp; Control Flow</span></div>
+            <div class="week-item"><span class="wk-num">03</span><span data-i18n="pyd.w3">Loops, Functions &amp; Modules</span></div>
+            <div class="week-item"><span class="wk-num">04</span><span data-i18n="pyd.w4">File I/O, Error Handling &amp; AI Coding Tools Introduction</span></div>
+            <div class="week-item"><span class="wk-num">05</span><span data-i18n="pyd.w5">Pandas I: DataFrames &amp; Data Reading</span></div>
+            <div class="week-item"><span class="wk-num">06</span><span data-i18n="pyd.w6">Pandas II: Data Cleaning, Merging &amp; Visualisation</span></div>
+            <div class="week-item"><span class="wk-num">07</span><span data-i18n="pyd.w7">Vector Data: Shapely &amp; GeoPandas</span></div>
+            <div class="week-item"><span class="wk-num">08</span><span data-i18n="pyd.w8">Spatial Operations: CRS, Joins, Buffers &amp; Overlays</span></div>
+            <div class="week-item"><span class="wk-num">09</span><span data-i18n="pyd.w9">Raster Data: Rasterio &amp; Band Math</span></div>
+            <div class="week-item"><span class="wk-num">10</span><span data-i18n="pyd.w10">Automation, Batch Processing &amp; AI-Assisted Coding</span></div>
+            <div class="week-item bonus"><span class="wk-num" style="color:var(--g3)">11</span><span data-i18n="pyd.w11">BONUS: Capstone Project</span></div>
+            <div class="week-item bonus"><span class="wk-num" style="color:var(--g3)">12</span><span data-i18n="pyd.w12">BONUS: GitHub Portfolio &amp; Course Wrap-up</span></div>
+          </div>
+        </div>
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="pyd.cap.title">Capstone Project</div>
+          <div
+            style="display:flex;align-items:flex-start;gap:14px;background:var(--g-pale);border:1px solid var(--border);border-radius:12px;padding:20px">
+            <div style="font-size:28px;flex-shrink:0">🗺</div>
+            <div>
+              <div style="font-weight:700;font-size:14px;color:var(--g1);margin-bottom:4px" data-i18n="pyd.cap.sub">Personal Geospatial Analysis for Cambodia</div>
+              <div style="font-size:13.5px;color:var(--ink-m);line-height:1.6" data-i18n="pyd.cap.desc">Each student completes a personal geospatial analysis applied to one district or commune in Cambodia of their choice, using at least two datasets and producing publication-quality maps. Everything is pushed to a clean GitHub repository.</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-section">
+          <div class="panel-section-title" data-i18n="pyd.path.title">Course Pathway</div>
+          <div
+            style="background:var(--g-pale);border:1px solid var(--border);border-radius:12px;padding:18px;font-size:13.5px;color:var(--ink-m);line-height:1.7;" data-i18n="pyd.path.desc">
+            <strong style="color:var(--g1)">Python for GIS</strong> → Remote Sensing with Python &amp; GEE → Future Courses (Drone Mapping, Geospatial Data Science)<br>
+            <span style="font-size:12.5px;color:var(--ink-l);margin-top:6px;display:block">Students who complete Python for GIS enter the Remote Sensing cohort with a strong Python foundation.</span>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button class="btn btn-green" onclick="closePanel('pygis-detail');openPanel('pygis-panel')" data-i18n="pyd.btn.reg">Register Now, $80</button>
+        <button class="btn btn-ghost" onclick="openDetail('rs-instructor')" data-i18n="pyd.btn.inst">Meet the Instructor →</button>
+        <button class="btn btn-ghost" onclick="closePanel('pygis-detail')" data-i18n="pyd.btn.close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Python for GIS Register Panel -->
+  <div class="course-detail-overlay" id="pygis-panel" onclick="closeDetail(event,'pygis-panel')">
+    <div class="course-detail-panel" onclick="event.stopPropagation()" style="max-width:560px">
+      <div class="panel-header">
+        <button class="panel-close" onclick="closePanel('pygis-panel')">✕</button>
+        <div
+          style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:white;margin-bottom:6px" data-i18n="pyr.title">
+          Register: Python for GIS</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6)" data-i18n="pyr.subtitle">Starts June 6, 2026 · 12 Weeks · Sat &amp; Sun · Google Meet</div>
+      </div>
+      <div class="panel-body">
+        <div style="display:flex;gap:12px;margin-bottom:24px">
+          <div style="flex:1;background:var(--gold-l);border:2px solid var(--gold);border-radius:12px;padding:16px">
+            <div
+              style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--earth);letter-spacing:.1em;margin-bottom:4px" data-i18n="pyr.early">
+              🐦 Early Bird · First 10 Only</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--earth)">$80
+            </div>
+            <div style="font-size:12px;color:var(--ink-l)">~320,000 KHR</div>
+          </div>
+          <div style="flex:1;background:white;border:1.5px solid var(--border);border-radius:12px;padding:16px">
+            <div
+              style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--ink-l);letter-spacing:.1em;margin-bottom:4px" data-i18n="pyr.full">
+              Full Price · After 10</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--ink)">$96
+            </div>
+            <div style="font-size:12px;color:var(--ink-l)">~384,000 KHR</div>
+          </div>
+        </div>
+        <div style="background:var(--g-pale);border-radius:12px;padding:20px;margin-bottom:24px;text-align:center">
+          <div style="font-size:14px;font-weight:600;color:var(--g1);margin-bottom:8px" data-i18n="pyr.form.title">Registration Form</div>
+          <div style="font-size:13px;color:var(--ink-l);margin-bottom:14px" data-i18n="pyr.form.desc">Fill in the registration form and complete payment via ABA Pay or ACLEDA.</div>
+          <button class="btn btn-green" onclick="window.open('https://forms.gle/KyNv1i9qUt9xDzmD9', '_blank')" data-i18n="pyr.form.btn">Open Registration Form →</button>
+          <div style="font-size:11px;color:var(--ink-l);margin-top:10px"><span data-i18n="pyr.form.q">Questions? Telegram:</span> <a href="https://t.me/islandgis" target="_blank" style="color:inherit;text-decoration:underline;">t.me/islandgis</a></div>
+        </div>
+        <div style="font-size:13px;color:var(--ink-l);text-align:center;line-height:1.6" data-i18n="pyr.footer">
+          📅 12 weeks · Sat &amp; Sun · Google Meet · Khmer language<br>
+          👥 Max 30 students · First come, first served<br>
+          📁 Outcome: GitHub portfolio with capstone project
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RS Register Panel -->
+  <div class="course-detail-overlay" id="rs-panel" onclick="closeDetail(event,'rs-panel')">
+    <div class="course-detail-panel" onclick="event.stopPropagation()" style="max-width:560px">
+      <div class="panel-header">
+        <button class="panel-close" onclick="closePanel('rs-panel')">✕</button>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:white;margin-bottom:6px"
+          data-i18n="cr.title">
+          Register for the First Cohort</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6)" data-i18n="cr.subtitle">Remote Sensing Analysis with
+          Python & GEE · 15 Weeks
+        </div>
+      </div>
+      <div class="panel-body">
+        <div style="display:flex;gap:12px;margin-bottom:24px">
+          <div style="flex:1;background:var(--gold-l);border:2px solid var(--gold);border-radius:12px;padding:16px">
+            <div
+              style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--earth);letter-spacing:.1em;margin-bottom:4px"
+              data-i18n="cr.early">
+              🐦 Early Bird · First 10 Only</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--earth)">$100
+            </div>
+            <div style="font-size:12px;color:var(--ink-l)">~400,000 KHR</div>
+          </div>
+          <div style="flex:1;background:white;border:1.5px solid var(--border);border-radius:12px;padding:16px">
+            <div
+              style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--ink-l);letter-spacing:.1em;margin-bottom:4px"
+              data-i18n="cr.full">
+              Full Price · After 10</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--ink)">$120
+            </div>
+            <div style="font-size:12px;color:var(--ink-l)">~480,000 KHR</div>
+          </div>
+        </div>
+        <div style="background:var(--g-pale);border-radius:12px;padding:20px;margin-bottom:24px;text-align:center">
+          <div style="font-size:14px;font-weight:600;color:var(--g1);margin-bottom:8px" data-i18n="cr.form.title">
+            Registration Form</div>
+          <div style="font-size:13px;color:var(--ink-l);margin-bottom:14px" data-i18n="cr.form.desc">Fill in the
+            registration form and complete
+            payment via ABA Pay or ACLEDA.</div>
+          <button class="btn btn-green" onclick="window.open('https://forms.gle/KyNv1i9qUt9xDzmD9', '_blank')"
+            data-i18n="cr.form.btn">Open
+            Registration Form →</button>
+          <div style="font-size:11px;color:var(--ink-l);margin-top:10px"><span data-i18n="cr.form.q">Questions? Telegram
+              channel:</span> <a href="https://t.me/islandgis" target="_blank"
+              style="color:inherit;text-decoration:underline;">https://t.me/islandgis</a></div>
+        </div>
+        <div style="font-size:13px;color:var(--ink-l);text-align:center;line-height:1.6" data-i18n="cr.footer">
+          📅 15 weeks · Sat & Sun · Google Meet · Khmer language<br>
+          👥 Max 30 students · First come, first served<br>
+          📁 Outcome: GitHub portfolio + live GEE App
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="lang.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
