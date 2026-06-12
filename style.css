@@ -31,6 +31,30 @@
       --gray: #f4f5f2;
       --shadow: 0 2px 20px rgba(13, 43, 26, .08);
       --shadow-lg: 0 8px 48px rgba(13, 43, 26, .14);
+
+      /* Typography Variables */
+      --font-primary: 'Calibri', 'Battambang', 'OS Battambang', sans-serif;
+
+      --font-size-h1: clamp(2.2rem, 5vw, 3.5rem);      /* H1 (Hero Title) */
+      --font-size-h2: clamp(1.6rem, 3.5vw, 2.25rem);   /* H2 (Section Title) */
+      --font-size-h3: clamp(1.15rem, 2vw, 1.38rem);    /* H3 (Card/Subheading) */
+      --font-size-body: clamp(0.95rem, 2vw, 1rem);     /* Body Text (~15.2px - 16px) */
+      --font-size-ui: 0.875rem;                        /* UI/Buttons (14px) */
+      --font-size-small: 0.813rem;                     /* Small labels (13px) */
+      --font-size-xs: 0.75rem;                         /* Extra small (12px) */
+
+      --font-weight-regular: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+
+      --line-height-heading: 1.3;
+      --line-height-body: 1.75;
+      --line-height-ui: 1.5;
+
+      --letter-spacing-heading: -0.01em;
+      --letter-spacing-body: normal;
+      --letter-spacing-ui: 0.02em;
     }
 
     html {
@@ -38,10 +62,11 @@
     }
 
     body {
-      font-family: 'Jost', sans-serif;
+      font-family: var(--font-primary);
       background: var(--ivory);
       color: var(--ink);
-      line-height: 1.65;
+      line-height: var(--line-height-body);
+      font-size: var(--font-size-body);
       overflow-x: hidden
     }
 
@@ -90,11 +115,11 @@
     }
 
     .nav-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 19px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-bold);
       color: white;
-      letter-spacing: .01em
+      letter-spacing: var(--letter-spacing-heading)
     }
 
     .nav-links {
@@ -105,14 +130,14 @@
     .nav-link {
       padding: 8px 18px;
       border-radius: 8px;
-      font-size: 13px;
-      font-weight: 500;
+      font-size: var(--font-size-ui);
+      font-weight: var(--font-weight-medium);
       color: rgba(255, 255, 255, .6);
       cursor: pointer;
       transition: all .2s;
       border: none;
       background: none;
-      font-family: 'Jost', sans-serif;
+      font-family: inherit;
     }
 
     .nav-link:hover {
@@ -128,14 +153,14 @@
     .nav-cta {
       padding: 9px 20px;
       border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: var(--font-size-ui);
+      font-weight: var(--font-weight-semibold);
       background: var(--g4);
       color: white;
       border: none;
       cursor: pointer;
       transition: all .2s;
-      font-family: 'Jost', sans-serif;
+      font-family: inherit;
     }
 
     .nav-cta:hover {
@@ -224,14 +249,14 @@
     .mobile-menu .mobile-link {
       padding: 12px 16px;
       border-radius: 10px;
-      font-size: 15px;
-      font-weight: 500;
+      font-size: var(--font-size-body);
+      font-weight: var(--font-weight-semibold);
       color: rgba(255, 255, 255, .7);
       background: none;
       border: none;
       text-align: left;
       cursor: pointer;
-      font-family: 'Jost', sans-serif;
+      font-family: inherit;
       transition: all .2s;
     }
 
@@ -320,9 +345,10 @@
       gap: 7px;
       padding: 12px 26px;
       border-radius: 10px;
-      font-family: 'Jost', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
+      font-family: inherit;
+      font-size: var(--font-size-ui);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: var(--letter-spacing-ui);
       cursor: pointer;
       border: none;
       transition: all .22s;
@@ -376,7 +402,7 @@
 
     .btn-sm {
       padding: 8px 16px;
-      font-size: 13px
+      font-size: var(--font-size-small)
     }
 
     /* ── SECTION COMMON ── */
@@ -399,18 +425,19 @@
     }
 
     .s-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 4vw, 42px);
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h2);
+      font-weight: var(--font-weight-bold);
       color: var(--g1);
-      line-height: 1.15;
+      line-height: var(--line-height-heading);
+      letter-spacing: var(--letter-spacing-heading);
       margin-bottom: 14px
     }
 
     .s-body {
-      font-size: 15.5px;
+      font-size: var(--font-size-body);
       color: var(--ink-m);
-      line-height: 1.72;
+      line-height: var(--line-height-body);
       max-width: 640px;
       margin-bottom: 28px
     }
@@ -463,11 +490,12 @@
     }
 
     .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(36px, 6vw, 68px);
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h1);
+      font-weight: var(--font-weight-bold);
       color: white;
-      line-height: 1.06;
+      line-height: var(--line-height-heading);
+      letter-spacing: var(--letter-spacing-heading);
       margin-bottom: 14px;
     }
 
@@ -477,9 +505,9 @@
     }
 
     .hero-desc {
-      font-size: 16px;
+      font-size: var(--font-size-body);
       color: rgba(255, 255, 255, .72);
-      line-height: 1.72;
+      line-height: var(--line-height-body);
       margin-bottom: 32px;
       max-width: 520px
     }
@@ -566,21 +594,21 @@
     }
 
     .mission-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(22px, 3vw, 34px);
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h2);
       font-style: italic;
-      font-weight: 600;
+      font-weight: var(--font-weight-semibold);
       color: var(--g1);
-      line-height: 1.3;
+      line-height: var(--line-height-heading);
       border-left: 4px solid var(--g4);
       padding-left: 24px;
       margin-bottom: 28px;
     }
 
     .mission-text {
-      font-size: 15.5px;
+      font-size: var(--font-size-body);
       color: var(--ink-m);
-      line-height: 1.72;
+      line-height: var(--line-height-body);
       margin-bottom: 16px
     }
 
@@ -618,17 +646,17 @@
     }
 
     .pillar-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 600;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h3);
+      font-weight: var(--font-weight-semibold);
       color: white;
       margin-bottom: 10px
     }
 
     .pillar-body {
-      font-size: 13.5px;
+      font-size: var(--font-size-small);
       color: rgba(255, 255, 255, .55);
-      line-height: 1.65
+      line-height: var(--line-height-body)
     }
 
     /* Why different */
@@ -659,16 +687,16 @@
     }
 
     .why-title {
-      font-weight: 700;
-      font-size: 15px;
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-ui);
       color: var(--g1);
       margin-bottom: 8px
     }
 
     .why-text {
-      font-size: 13.5px;
+      font-size: var(--font-size-small);
       color: var(--ink-m);
-      line-height: 1.6
+      line-height: var(--line-height-body)
     }
 
     /* CTA banner */
@@ -679,11 +707,13 @@
     }
 
     .cta-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 4vw, 40px);
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h2);
+      font-weight: var(--font-weight-bold);
       color: white;
-      margin-bottom: 12px
+      margin-bottom: 12px;
+      line-height: var(--line-height-heading);
+      letter-spacing: var(--letter-spacing-heading);
     }
 
     .cta-sub {
@@ -720,17 +750,19 @@
     }
 
     .courses-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(30px, 5vw, 52px);
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h1);
+      font-weight: var(--font-weight-bold);
       color: white;
       margin-bottom: 8px;
-      line-height: 1.1
+      line-height: var(--line-height-heading);
+      letter-spacing: var(--letter-spacing-heading);
     }
 
     .courses-hero p {
-      font-size: 15px;
+      font-size: var(--font-size-body);
       color: rgba(255, 255, 255, .6);
+      line-height: var(--line-height-body);
       max-width: 560px
     }
 
@@ -754,8 +786,8 @@
     .filter-chip {
       padding: 7px 18px;
       border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-semibold);
       cursor: pointer;
       border: 1.5px solid var(--border);
       background: white;
@@ -860,25 +892,25 @@
     }
 
     .course-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h3);
+      font-weight: var(--font-weight-bold);
       color: var(--g1);
-      line-height: 1.2;
+      line-height: var(--line-height-heading);
       margin-bottom: 8px
     }
 
     .course-card-subtitle {
-      font-size: 13px;
+      font-size: var(--font-size-small);
       color: var(--ink-l);
       font-style: italic;
       margin-bottom: 16px
     }
 
     .course-card-desc {
-      font-size: 13.5px;
+      font-size: var(--font-size-small);
       color: var(--ink-m);
-      line-height: 1.62;
+      line-height: var(--line-height-body);
       margin-bottom: 20px;
       flex: 1
     }
@@ -912,8 +944,8 @@
 
 
     .course-meta-label {
-      font-size: 10px;
-      font-weight: 600;
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-semibold);
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--ink-l);
@@ -921,8 +953,8 @@
     }
 
     .course-meta-value {
-      font-size: 13px;
-      font-weight: 600;
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-semibold);
       color: var(--ink)
     }
 
@@ -934,9 +966,9 @@
     }
 
     .price-early {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: 1.75rem;
+      font-weight: var(--font-weight-bold);
       color: var(--earth);
     }
 
@@ -1045,13 +1077,14 @@
     }
 
     .panel-section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h3);
+      font-weight: var(--font-weight-bold);
       color: var(--g1);
       margin-bottom: 14px;
       padding-bottom: 8px;
-      border-bottom: 2px solid var(--g-light)
+      border-bottom: 2px solid var(--g-light);
+      letter-spacing: var(--letter-spacing-heading);
     }
 
     .outcome-list {
@@ -1102,9 +1135,9 @@
     }
 
     .wk-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-body);
+      font-weight: var(--font-weight-bold);
       color: var(--g4);
       width: 28px;
       flex-shrink: 0
@@ -1128,9 +1161,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h2);
+      font-weight: var(--font-weight-bold);
       color: white
     }
 
@@ -1148,9 +1181,9 @@
     }
 
     .inst-bio {
-      font-size: 13px;
+      font-size: var(--font-size-small);
       color: var(--ink-m);
-      line-height: 1.6
+      line-height: var(--line-height-body);
     }
 
     .inst-tags {
@@ -1242,11 +1275,12 @@
     }
 
     .about-hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 5.5vw, 60px);
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h1);
+      font-weight: var(--font-weight-bold);
       color: white;
-      line-height: 1.08;
+      line-height: var(--line-height-heading);
+      letter-spacing: var(--letter-spacing-heading);
       margin-bottom: 16px
     }
 
@@ -1256,9 +1290,9 @@
     }
 
     .about-hero-body {
-      font-size: 16px;
+      font-size: var(--font-size-body);
       color: rgba(255, 255, 255, .68);
-      line-height: 1.72;
+      line-height: var(--line-height-body);
       max-width: 660px
     }
 
@@ -1276,21 +1310,21 @@
 
 
     .story-pullquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(20px, 2.8vw, 30px);
-      font-weight: 600;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h2);
+      font-weight: var(--font-weight-semibold);
       font-style: italic;
       color: var(--g1);
-      line-height: 1.35;
+      line-height: var(--line-height-heading);
       border-left: 4px solid var(--g4);
       padding-left: 22px;
       margin-bottom: 28px;
     }
 
     .story-text {
-      font-size: 15.5px;
+      font-size: var(--font-size-body);
       color: var(--ink-m);
-      line-height: 1.75;
+      line-height: var(--line-height-body);
       margin-bottom: 16px
     }
 
@@ -1347,26 +1381,26 @@
     }
 
     .philo-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: 3rem;
+      font-weight: var(--font-weight-bold);
       color: rgba(255, 255, 255, .07);
       margin-bottom: 12px;
       line-height: 1
     }
 
     .philo-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 600;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h3);
+      font-weight: var(--font-weight-semibold);
       color: white;
       margin-bottom: 10px
     }
 
     .philo-text {
-      font-size: 13px;
+      font-size: var(--font-size-small);
       color: rgba(255, 255, 255, .5);
-      line-height: 1.65
+      line-height: var(--line-height-body)
     }
 
     /* Who is this for */
@@ -1438,15 +1472,16 @@
     }
 
     .footer-brand-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 24px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h3);
+      font-weight: var(--font-weight-bold);
       color: white;
-      margin-bottom: 6px
+      margin-bottom: 6px;
+      letter-spacing: var(--letter-spacing-heading);
     }
 
     .footer-brand-tag {
-      font-size: 13px;
+      font-size: var(--font-size-small);
       margin-bottom: 20px
     }
 
@@ -1457,8 +1492,8 @@
     }
 
     .footer-nav-link {
-      font-size: 13px;
-      font-weight: 500;
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-medium);
       color: rgba(255, 255, 255, .55);
       cursor: pointer;
       padding: 4px 10px;
@@ -1466,7 +1501,7 @@
       transition: color .2s;
       background: none;
       border: none;
-      font-family: 'Jost', sans-serif;
+      font-family: inherit;
     }
 
     .footer-nav-link:hover {
@@ -1474,7 +1509,7 @@
     }
 
     .footer-copy {
-      font-size: 12px;
+      font-size: var(--font-size-xs);
       opacity: .5;
       margin-top: 20px
     }
@@ -1518,17 +1553,19 @@
     }
 
     .team-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(30px, 5vw, 52px);
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h1);
+      font-weight: var(--font-weight-bold);
       color: white;
       margin-bottom: 8px;
-      line-height: 1.1
+      line-height: var(--line-height-heading);
+      letter-spacing: var(--letter-spacing-heading);
     }
 
     .team-hero p {
-      font-size: 15px;
+      font-size: var(--font-size-body);
       color: rgba(255, 255, 255, .6);
+      line-height: var(--line-height-body);
       max-width: 560px
     }
 
@@ -1576,9 +1613,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 36px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: 2.25rem;
+      font-weight: var(--font-weight-bold);
       color: white;
       margin-bottom: 20px;
       overflow: hidden;
@@ -1593,16 +1630,16 @@
     }
 
     .team-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 700;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-h3);
+      font-weight: var(--font-weight-bold);
       color: var(--g1);
       margin-bottom: 4px
     }
 
     .team-role {
-      font-size: 13px;
-      font-weight: 600;
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-semibold);
       color: var(--g4);
       text-transform: uppercase;
       letter-spacing: .06em;
@@ -1610,9 +1647,9 @@
     }
 
     .team-bio {
-      font-size: 13.5px;
+      font-size: var(--font-size-small);
       color: var(--ink-m);
-      line-height: 1.65;
+      line-height: var(--line-height-body);
       margin-bottom: 16px
     }
 
